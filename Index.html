@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Ratchetmaster12's offical GitHub page!</title>
+            <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        </head>
+        <body>
+            <script>
+                var ver;
+                var doError;
+                var gs;
+                
+                
+                
+                $('.document').load(function(){
+                    gs = document.cookie
+                    loadGame(gs);
+                    ver = '1.0.0';
+                    doError = false;
+                })
+                
+                //Checks if the GameState (boolean-defined) is clean or not; throw error if neither
+                function loadGame(Boolean b){
+                    if(b == false){
+                        //If GameState is clear then proceed with normal activity
+                        checkGS();
+                        reload();
+                    }else if(b == true){
+                        //Woah! They cheated (GameState false = legit game, GameState true = good game)
+                        checkGS();
+                        reload();
+                    }else{
+                        throwError("WRONG_SETUP");
+                    }
+                }
+                
+                function checkGS(){
+                    if()
+                }
+                
+                function throwError(String s){
+                    if(s == "WRONG_SETUP"){
+                        console.error("There was a severe error whilst loading DnD ver." + ver);
+                        checkError("DnD not loaded/nPlease see the console for errors.");
+                    }
+                }
+                
+                function checkError(String s){
+                    if(doError = true){
+                        confirm(s);
+                    }
+                }
+            </script>
+        </body>
+    </html>
+<!-- End of file --!/>
